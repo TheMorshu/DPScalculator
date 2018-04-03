@@ -22,4 +22,4 @@ On Debian and Windows you should be able to run the jar by simply opening it. If
 java -jar DPScalculator-1.0-SNAPSHOT.jar
 ```
 
-in terminal. The file can be dowloaded directly [HERE](https://github.com/TheMorshu/DPScalculator/DPScalculator-1.0-SNAPSHOT.jar). You can also generate jar file yourseld.
+in terminal. The file can be dowloaded directly [HERE](https://github.com/TheMorshu/DPScalculator/blob/master/DPScalculator-1.0-SNAPSHOT.jar). You can also generate jar file yourseld.
