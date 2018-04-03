@@ -3,5 +3,23 @@
 This project is under work and will be finished once I have enough time! Currently only the max hit calc is working.
 
 
-**ASD**
+### Generating jar file
 
+If you feel uncomfortable using the already generated jar file, you can generate the jar file yourself from the source code. Feel free to check the source code if you want to, it's not long! You can package the file using maven with the following code in terminal:
+
+```
+mvn package
+```
+
+In folder _target_ jar-file called _DPScalculator-1.0-SNAPSHOT.jar_ will be generated..
+
+
+### Running the file
+
+On Debian and Windows you should be able to run the jar by simply opening it. If not, please open terminal in correct folder and type
+
+```
+java -jar DPScalculator-1.0-SNAPSHOT.jar
+```
+
+in terminal.
