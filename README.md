@@ -2,6 +2,18 @@
 
 This project is under work and will be finished once I have enough time! Currently only the max hit calc is working.
 
+**WHAT IS CURRENTLY WORKING:**
+-Max hit calc (potions, prayers, slayer (y/n), levels&bonuses, attack style)
+
+**WHAT LOOKS LIKE TO BE WORKING:**
+-Accuracy calculator (has NOT been tested/validated in live game!) but seems to be working!
+-DPS calculator works IF accuracy calculator works correctly.
+
+**WHAT IS NOT WORKING:**
+-Void armour not added
+-Salve amulet not added
+-Special attacks not added
+
 
 ### Generating jar file using Maven
 
