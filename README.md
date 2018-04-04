@@ -1,6 +1,7 @@
-## DPS calculator for OSRS by Sijoittaja/TheMorshu/Ilmari Heiskanen
+## DPS (melee) calculator for OSRS by Sijoittaja/TheMorshu/Ilmari Heiskanen
 
 This project is under work and will be finished once I have enough time! Currently only the max hit calc is working.
+NOTE: Currently only for melee!
 
 **WHAT IS CURRENTLY WORKING:**
 -Max hit calc (potions, prayers, slayer (y/n), levels&bonuses, attack style)
