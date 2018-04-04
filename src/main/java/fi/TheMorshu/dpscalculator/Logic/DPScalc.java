@@ -19,7 +19,7 @@ public class DPScalc {
     int defBonus;
     int wepSpeed;
     
-    double prayerBoost;
+    double prayerDmgBoost;
     double styleBonus;
     double otherBonus;
     
@@ -29,24 +29,7 @@ public class DPScalc {
     String prayer;
     
     
-    
     public DPScalc() {
-        this.strLvl = 1;
-        this.attLvl = 1;
-        this.defLvl = 1;
-        this.attBonus = 0;
-        this.strBonus = 0;
-        this.defBonus = 0;
-        this.wepSpeed = 0;
-        
-        this.prayerBoost = 1;
-        this.otherBonus = 1;
-        this.styleBonus = 0;
-        
-        this.prayer = "n";
-        this.style = "a";
-        this.potion = "n";
-        this.slayer = false;
     }
 
     public void clear() {
@@ -57,7 +40,7 @@ public class DPScalc {
         this.strBonus = 0;
         this.defBonus = 0;
         this.wepSpeed = 6;
-        this.prayerBoost = 1;
+        this.prayerDmgBoost = 1;
         this.otherBonus = 1;
         this.styleBonus = 0;
         
@@ -70,19 +53,19 @@ public class DPScalc {
     public void setPrayer(String prayer) {
         this.prayer = prayer;
         if (prayer.equals("b")) {
-            this.prayerBoost = 1.05;
+            this.prayerDmgBoost = 1.05;
         }
         if (prayer.equals("s")) {
-            this.prayerBoost = 1.1;
+            this.prayerDmgBoost = 1.1;
         }
         if (prayer.equals("u")) {
-            this.prayerBoost = 1.15;
+            this.prayerDmgBoost = 1.15;
         }
         if (prayer.equals("c")) {
-            this.prayerBoost = 1.18;
+            this.prayerDmgBoost = 1.18;
         }
         if (prayer.equals("p")) {
-            this.prayerBoost = 1.23;
+            this.prayerDmgBoost = 1.23;
         }
     }
     
@@ -92,10 +75,12 @@ public class DPScalc {
     
     public void setStyle(String style) {
         this.style = style;
-        if (style.equals("a")) {
+        if (style.equals("agg")) {
             this.styleBonus = 3;
         } if (style.equals("c")) {
             this.styleBonus = 1;
+        } if (style.equals("acc")) {
+            //accuracy boost
         }
     }
     
@@ -103,74 +88,49 @@ public class DPScalc {
         if (slayer.equals("y")) {
             this.slayer = true;
             this.otherBonus = 1.166666667;
+            //lisää accuracy
         } else {
             this.slayer = false;
         }
-        
     }
     
     
     public int getWepSpeed() {
         return wepSpeed;
+        //kesken
     }
 
     public void setWepSpeed(int wepSpeed) {
         this.wepSpeed = wepSpeed;
-    }
-    
-    
-    
-    public int getStrLvl() {
-        return strLvl;
+        //kesken
     }
 
     public void setStrLvl(int strLvl) {
         this.strLvl = strLvl;
     }
 
-    public int getAttLvl() {
-        return attLvl;
-    }
-
     public void setAttLvl(int attLvl) {
         this.attLvl = attLvl;
-    }
-
-    public int getDefLvl() {
-        return defLvl;
     }
 
     public void setDefLvl(int defLvl) {
         this.defLvl = defLvl;
     }
 
-    public int getAttBonus() {
-        return attBonus;
-    }
-
     public void setAttBonus(int attBonus) {
         this.attBonus = attBonus;
-    }
-
-    public int getStrBonus() {
-        return strBonus;
     }
 
     public void setStrBonus(int strBonus) {
         this.strBonus = strBonus;
     }
 
-    public int getDefBonus() {
-        return defBonus;
-    }
-
     public void setDefBonus(int defBonus) {
         this.defBonus = defBonus;
     }
     
-    
     public int getEffectiveStr() {
-        Double value = ((getStrLvl()+getPotionBonus())*this.prayerBoost*this.otherBonus)+this.styleBonus;
+        Double value = ((this.strLvl+getPotionDmgBonus())*this.prayerDmgBoost*this.otherBonus)+this.styleBonus;
         System.out.println("Effective str: "+value);
         return (int)value.doubleValue();
     }
@@ -187,10 +147,9 @@ public class DPScalc {
         System.out.println(baseDamage);
         System.out.println("Base damage: "+baseDamage);
         return baseDamage;
-    }
+    }    
     
-    
-    public int getPotionBonus() {
+    public int getPotionDmgBonus() {
         if (this.potion.equals("c")) {
             Double value = 3 + 0.1*this.strLvl;
             return (int)value.doubleValue();
@@ -200,7 +159,6 @@ public class DPScalc {
         }
         return 0;
     }
-    
     
     public int getMaxHit() {
         return (int)this.baseDamage().doubleValue();

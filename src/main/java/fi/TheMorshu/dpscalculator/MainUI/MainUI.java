@@ -42,7 +42,7 @@ public class MainUI extends Application {
         Label speedLabel = new Label("Weapon speed [3-7 from wiki]: ");
         TextField speedInput = new TextField();
         
-        Label styleLabel = new Label("Attack style (a=aggressive, c=controlled, o=other): ");
+        Label styleLabel = new Label("Attack style (agg=aggressive, c=controlled, acc=accurate, o=other): ");
         TextField styleInput = new TextField();
         Label potionLabel = new Label("Potion: (c=combat, sc=supercombat, n=none)");
         TextField potionInput = new TextField();
@@ -75,7 +75,7 @@ public class MainUI extends Application {
         strBonusInput.setText("0");
         defBonusInput.setText("0");
         speedInput.setText("6");
-        styleInput.setText("a");
+        styleInput.setText("agg");
         potionInput.setText("n");
         prayerInput.setText("n");
         slayerInput.setText("n");
