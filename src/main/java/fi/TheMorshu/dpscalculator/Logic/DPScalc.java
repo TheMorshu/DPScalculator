@@ -18,10 +18,13 @@ public class DPScalc {
     int strBonus;
     int defBonus;
     int wepSpeed;
-    
+
     double prayerDmgBoost;
-    double styleBonus;
-    double otherBonus;
+    double prayerAttBoost;
+    double styleDmgBonus;
+    double slayerDmgBonus;
+    double slayerAttBonus;
+    double styleAttBonus;
     
     Boolean slayer;
     String potion;
@@ -41,31 +44,38 @@ public class DPScalc {
         this.defBonus = 0;
         this.wepSpeed = 6;
         this.prayerDmgBoost = 1;
-        this.otherBonus = 1;
-        this.styleBonus = 0;
-        
+        this.slayerDmgBonus = 1;
+        this.styleDmgBonus = 0;
+        this.prayerAttBoost = 1;
+        this.slayerAttBonus = 1;
+        this.styleAttBonus = 0;
         this.prayer = "n";
         this.style = "a";
         this.potion = "n";
         this.slayer = false;
     }
-
+    
     public void setPrayer(String prayer) {
         this.prayer = prayer;
         if (prayer.equals("b")) {
             this.prayerDmgBoost = 1.05;
+            this.prayerAttBoost = 1.05;
         }
         if (prayer.equals("s")) {
             this.prayerDmgBoost = 1.1;
+            this.prayerAttBoost = 1.1;
         }
         if (prayer.equals("u")) {
             this.prayerDmgBoost = 1.15;
+            this.prayerAttBoost = 1.15;
         }
         if (prayer.equals("c")) {
             this.prayerDmgBoost = 1.18;
+            this.prayerAttBoost = 1.15;
         }
         if (prayer.equals("p")) {
             this.prayerDmgBoost = 1.23;
+            this.prayerAttBoost = 1.20;
         }
     }
     
@@ -76,33 +86,34 @@ public class DPScalc {
     public void setStyle(String style) {
         this.style = style;
         if (style.equals("agg")) {
-            this.styleBonus = 3;
+            this.styleDmgBonus = 3;
         } if (style.equals("c")) {
-            this.styleBonus = 1;
+            this.styleDmgBonus = 1;
+            this.styleAttBonus = 1;
         } if (style.equals("acc")) {
-            //accuracy boost
+            this.styleAttBonus = 3;
         }
     }
     
     public void setSlayer(String slayer) {
         if (slayer.equals("y")) {
             this.slayer = true;
-            this.otherBonus = 1.166666667;
-            //lisää accuracy
+            this.slayerDmgBonus = 1.166666667;
+            this.slayerAttBonus = 1.166666667;
         } else {
             this.slayer = false;
         }
     }
     
-    
-    public int getWepSpeed() {
-        return wepSpeed;
-        //kesken
+    public double getHitsPerSecond() {
+        int ticksPerHit = 10 - this.wepSpeed;
+        double secsPerHit = 0.6*ticksPerHit;
+        double hitsPerSec = 1/secsPerHit;
+        return hitsPerSec;
     }
 
     public void setWepSpeed(int wepSpeed) {
         this.wepSpeed = wepSpeed;
-        //kesken
     }
 
     public void setStrLvl(int strLvl) {
@@ -130,22 +141,28 @@ public class DPScalc {
     }
     
     public int getEffectiveStr() {
-        Double value = ((this.strLvl+getPotionDmgBonus())*this.prayerDmgBoost*this.otherBonus)+this.styleBonus;
-        System.out.println("Effective str: "+value);
+        Double value = ((this.strLvl+getPotionDmgBonus())*this.prayerDmgBoost*this.slayerDmgBonus)+this.styleDmgBonus;
         return (int)value.doubleValue();
+    }
+    
+    public int getEffectuveAtt() { //toimii confirmed
+        Double value = ((this.attLvl+getPotionAttBonus())*this.prayerAttBoost*this.slayerAttBonus);
+        value = (double)Math.round(value+0.5);
+        value += this.styleAttBonus;
+        value += 8;
+        return (int)value.doubleValue();
+    }
+    
+    public int getEffectuveDef() {
+        return this.defLvl+8;
     }
     
     public Double baseDamage() {
         int effectiveStr = this.getEffectiveStr();
         Double baseDamage = 1.3;
-        System.out.println(baseDamage);
         baseDamage += 1.0*effectiveStr/10;
-        System.out.println(baseDamage);
         baseDamage += 1.0*this.strBonus/80;
-        System.out.println(baseDamage);
         baseDamage += 1.0*(effectiveStr * this.strBonus)/640;
-        System.out.println(baseDamage);
-        System.out.println("Base damage: "+baseDamage);
         return baseDamage;
     }    
     
@@ -160,23 +177,50 @@ public class DPScalc {
         return 0;
     }
     
+    public int getPotionAttBonus() {
+        if (this.potion.equals("c")) {
+            Double value = 3 + 0.1*this.attLvl;
+            return (int)value.doubleValue();
+        } if (this.potion.equals("sc")) {
+            Double value = 5 + 0.15*this.attLvl;
+            return (int)value.doubleValue();
+        }
+        return 0;
+    }
+    
     public int getMaxHit() {
         return (int)this.baseDamage().doubleValue();
     }
     
-    public long getHitChance() {
-        return -1;
+    public int attackRoll() {
+        return getEffectuveAtt()*(this.attBonus+64);
     }
     
-    public long getDps() {
-        return -1;
+    public int defenceRoll() {
+        return getEffectuveDef()*(this.defBonus+64);
     }
     
+    public double getHitChance() {
+        int defRoll = defenceRoll();
+        int attRoll = attackRoll();
+        if (attRoll>defRoll) {
+            double alapuoli = 2*(attRoll+1);
+            double ylapuoli = defRoll+2;
+            double jako = ylapuoli/alapuoli;
+            double chance = 1 - jako;
+            System.out.println("chance: "+chance);
+            return chance;
+        } else {
+            double alapuoli = 2*(defRoll+1);
+            double ylapuoli = attRoll;
+            double chance = ylapuoli/alapuoli;
+            System.out.println("chance: "+chance);
+            return chance;
+        }    
+    }
     
-    
-    
-    
-    
-    
-    
+    public double getDps() {
+        return (1.0*getMaxHit()/2)*getHitChance()*getHitsPerSecond();
+    }
+
 }
