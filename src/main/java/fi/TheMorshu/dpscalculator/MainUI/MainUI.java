@@ -135,7 +135,7 @@ public class MainUI extends Application {
 
         
         //Näkymät
-        Scene dpsScene = new Scene(dpsGUI, 700, 400);
+        Scene dpsScene = new Scene(dpsGUI, 800, 400);
         
         
         calculate.setOnAction((event) -> {
