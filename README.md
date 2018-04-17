@@ -15,6 +15,12 @@ NOTE: Currently only for melee!
 -Salve amulet not added
 -Special attacks not added
 
+**To-do list**
+-Better attack speed options
+-Hiscore fetch for stats
+-Item selection for each item slot for more pleasant bonus calculation
+-Minor bug fix in accuracy formula (priority)
+
 
 ### Generating jar file using Maven
 
