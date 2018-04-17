@@ -147,7 +147,7 @@ public class DPScalc {
     
     public int getEffectuveAtt() { //toimii confirmed
         Double value = ((this.attLvl+getPotionAttBonus())*this.prayerAttBoost*this.slayerAttBonus);
-        value = (double)Math.round(value+0.5);
+        value = (double)Math.round(value-0.5);
         value += this.styleAttBonus;
         value += 8;
         return (int)value.doubleValue();
