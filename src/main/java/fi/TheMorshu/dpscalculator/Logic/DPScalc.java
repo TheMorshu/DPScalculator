@@ -49,31 +49,31 @@ public class DPScalc {
         this.prayerAttBoost = 1;
         this.slayerAttBonus = 1;
         this.styleAttBonus = 0;
-        this.prayer = "n";
-        this.style = "a";
-        this.potion = "n";
+        this.prayer = "none";
+        this.style = "Accurate";
+        this.potion = "none";
         this.slayer = false;
     }
     
     public void setPrayer(String prayer) {
         this.prayer = prayer;
-        if (prayer.equals("b")) {
+        if (prayer.equals("burstOfStr")) {
             this.prayerDmgBoost = 1.05;
             this.prayerAttBoost = 1.05;
         }
-        if (prayer.equals("s")) {
+        if (prayer.equals("superHumanStr")) {
             this.prayerDmgBoost = 1.1;
             this.prayerAttBoost = 1.1;
         }
-        if (prayer.equals("u")) {
+        if (prayer.equals("ultimateStr")) {
             this.prayerDmgBoost = 1.15;
             this.prayerAttBoost = 1.15;
         }
-        if (prayer.equals("c")) {
+        if (prayer.equals("Chivarly")) {
             this.prayerDmgBoost = 1.18;
             this.prayerAttBoost = 1.15;
         }
-        if (prayer.equals("p")) {
+        if (prayer.equals("Piety")) {
             this.prayerDmgBoost = 1.23;
             this.prayerAttBoost = 1.20;
         }
@@ -85,12 +85,12 @@ public class DPScalc {
     
     public void setStyle(String style) {
         this.style = style;
-        if (style.equals("agg")) {
+        if (style.equals("aggressive")) {
             this.styleDmgBonus = 3;
-        } if (style.equals("c")) {
+        } if (style.equals("controlled")) {
             this.styleDmgBonus = 1;
             this.styleAttBonus = 1;
-        } if (style.equals("acc")) {
+        } if (style.equals("Accurate")) {
             this.styleAttBonus = 3;
         }
     }
@@ -167,10 +167,10 @@ public class DPScalc {
     }    
     
     public int getPotionDmgBonus() {
-        if (this.potion.equals("c")) {
+        if (this.potion.equals("combat")) {
             Double value = 3 + 0.1*this.strLvl;
             return (int)value.doubleValue();
-        } if (this.potion.equals("sc")) {
+        } if (this.potion.equals("supercombat")) {
             Double value = 5 + 0.15*this.strLvl;
             return (int)value.doubleValue();
         }
@@ -178,10 +178,10 @@ public class DPScalc {
     }
     
     public int getPotionAttBonus() {
-        if (this.potion.equals("c")) {
+        if (this.potion.equals("combat")) {
             Double value = 3 + 0.1*this.attLvl;
             return (int)value.doubleValue();
-        } if (this.potion.equals("sc")) {
+        } if (this.potion.equals("supercombat")) {
             Double value = 5 + 0.15*this.attLvl;
             return (int)value.doubleValue();
         }

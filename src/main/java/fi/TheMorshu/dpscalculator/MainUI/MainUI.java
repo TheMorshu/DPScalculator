@@ -10,6 +10,7 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
@@ -39,34 +40,38 @@ public class MainUI extends Application {
         TextField attackBonusInput = new TextField();
         Label strBonusLabel = new Label("Str bonus: ");
         TextField strBonusInput = new TextField();
-        Label speedLabel = new Label("Weapon speed [3-7 from wiki]: ");
-        TextField speedInput = new TextField();
+        Label speedLabel = new Label("Weapon speed (check from wiki): ");
         
-        Label styleLabel = new Label("Attack style (agg=aggressive, c=controlled, acc=accurate, o=other): ");
-        TextField styleInput = new TextField();
-        Label potionLabel = new Label("Potion: (c=combat, sc=supercombat, n=none)");
-        TextField potionInput = new TextField();
-        Label prayerLabel = new Label("Prayer (b/s/u/c/p, n=none): ");
-        TextField prayerInput = new TextField();
+        Label styleLabel = new Label("Attack style: ");
+        Label potionLabel = new Label("Potion: ");
+        Label prayerLabel = new Label("Prayer: ");
         Label slayerLabel = new Label("Slayer task (y/n): ");
         TextField slayerInput = new TextField();
         
+        ComboBox attackStyleBox = new ComboBox();
+        attackStyleBox.getItems().addAll("Accurate", "aggressive", "controlled", "defencive");
+        attackStyleBox.setValue("Accurate");
         
+        ComboBox potionBox = new ComboBox();
+        potionBox.getItems().addAll("none", "combat", "supercombat");
+        potionBox.setValue("none");
         
+        ComboBox prayerBox = new ComboBox();
+        prayerBox.getItems().addAll("none", "burstOfStr", "superHumanStr", "ultimateStr", "Chivarly", "Piety");
+        prayerBox.setValue("none");
         
-        
+        ComboBox attackSpeedBox = new ComboBox();
+        attackSpeedBox.getItems().addAll("3", "4", "5", "6", "7");
+        attackSpeedBox.setValue("6");
+
         Label maxHit = new Label("Max hit: ");
         Label hitChance = new Label("Hit chance: ");
         Label dps = new Label("Dps: ");
-        
-        
-        
         
         Label defLabel = new Label("Opponents def lvl: ");
         TextField defInput = new TextField();
         Label defBonusLabel = new Label("Opponents def bonus: ");
         TextField defBonusInput = new TextField();
-
         
         attackInput.setText("1");
         strInput.setText("1");
@@ -74,69 +79,44 @@ public class MainUI extends Application {
         attackBonusInput.setText("0");
         strBonusInput.setText("0");
         defBonusInput.setText("0");
-        speedInput.setText("6");
-        styleInput.setText("agg");
-        potionInput.setText("n");
-        prayerInput.setText("n");
         slayerInput.setText("n");
-        
         
         //Napit
         Button calculate = new Button("Calculate! -->");
-
         
         //Asettelut
         GridPane dpsGUI = new GridPane();
-        
         
         //Asettelujen määrittely
         dpsGUI.add(attackLabel, 0, 0);
         dpsGUI.add(attackInput, 1, 0);
         dpsGUI.add(strLabel, 0, 1);
         dpsGUI.add(strInput, 1, 1);
-        
         dpsGUI.add(attackBonusLabel, 0, 2);
         dpsGUI.add(attackBonusInput, 1, 2);
         dpsGUI.add(strBonusLabel, 0, 3);
         dpsGUI.add(strBonusInput, 1, 3);
-        
         dpsGUI.add(defLabel, 0, 4);
         dpsGUI.add(defInput, 1, 4);
         dpsGUI.add(defBonusLabel, 0, 5);
         dpsGUI.add(defBonusInput, 1, 5);
-        
         dpsGUI.add(speedLabel, 0, 6);
-        dpsGUI.add(speedInput, 1, 6);
-        
+        dpsGUI.add(attackSpeedBox, 1, 6);
         dpsGUI.add(styleLabel, 0, 7);
-        dpsGUI.add(styleInput, 1, 7);
         dpsGUI.add(potionLabel, 0, 8);
-        dpsGUI.add(potionInput, 1, 8);
+        dpsGUI.add(potionBox, 1, 8);
         dpsGUI.add(prayerLabel, 0, 9);
-        dpsGUI.add(prayerInput, 1, 9);
+        dpsGUI.add(prayerBox, 1, 9);
         dpsGUI.add(slayerLabel, 0, 10);
         dpsGUI.add(slayerInput, 1, 10);
-        
-        
-        
-        
+        dpsGUI.add(attackStyleBox, 1, 7);
         dpsGUI.add(calculate, 3, 3);
-        
-        
         dpsGUI.add(maxHit, 4, 2);
         dpsGUI.add(hitChance, 4, 3);
         dpsGUI.add(dps, 4, 4);
-        
-        
-        //Asettelun hienosäätö
-        dpsGUI.setHgap(10);
-        dpsGUI.setVgap(10);
-        dpsGUI.setPadding(new Insets(10, 10, 10, 10));
 
-        
         //Näkymät
-        Scene dpsScene = new Scene(dpsGUI, 800, 400);
-        
+        Scene dpsScene = new Scene(dpsGUI, 1000, 400);
         
         calculate.setOnAction((event) -> {
             dpsCalc.clear();
@@ -146,21 +126,17 @@ public class MainUI extends Application {
             dpsCalc.setStrBonus(Integer.parseInt(strBonusInput.getText()));
             dpsCalc.setDefLvl(Integer.parseInt(defInput.getText()));
             dpsCalc.setDefBonus(Integer.parseInt(defBonusInput.getText()));
-            dpsCalc.setWepSpeed(Integer.parseInt(speedInput.getText()));
-            dpsCalc.setPrayer(prayerInput.getText());
-            dpsCalc.setPotion(potionInput.getText());
-            dpsCalc.setStyle(styleInput.getText());
+            dpsCalc.setWepSpeed(Integer.parseInt(attackSpeedBox.getValue().toString()));
+            dpsCalc.setPrayer(prayerBox.getValue().toString());
+            dpsCalc.setPotion(potionBox.getValue().toString());
+            dpsCalc.setStyle(attackStyleBox.getValue().toString());
             dpsCalc.setSlayer(slayerInput.getText());
-            
-            
             maxHit.setText("Max hit: "+dpsCalc.getMaxHit());
             hitChance.setText("Hit chance: "+dpsCalc.getHitChance());
             dps.setText("Dps: "+dpsCalc.getDps());
 
         });
         
-        
-
         window.setTitle("DPS calculator by Sijoittaja");
         window.setScene(dpsScene);
         window.show();
