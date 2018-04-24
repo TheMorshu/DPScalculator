@@ -4,6 +4,7 @@ This project is under work and will be finished once I have enough time! Current
 NOTE: Currently only for melee!
 
 ### FIRST RELEASE!
+[Download here!](https://github.com/TheMorshu/DPScalculator/releases)
 
 **Beta version 0.1 includes:**
 - Basic UI that should do the work, will be improved later
