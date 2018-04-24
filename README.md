@@ -3,23 +3,20 @@
 This project is under work and will be finished once I have enough time! Currently only the max hit calc is working.
 NOTE: Currently only for melee!
 
-**WHAT IS CURRENTLY WORKING:**
--Max hit calc (potions, prayers, slayer (y/n), levels&bonuses, attack style)
+### FIRST RELEASE!
 
-**WHAT LOOKS LIKE TO BE WORKING:**
--Accuracy calculator (has NOT been tested/validated in live game!) but seems to be working!
--DPS calculator works IF accuracy calculator works correctly.
+**Beta version 0.1 includes:**
+- Basic UI that should do the work, will be improved later
+- Max hit, hit chance and DPS calculator for melee including potions, prayers, attack styles, levels, bonuses, attack style and slayer (excluding special attacks, salve amulet and void gear).
 
-**WHAT IS NOT WORKING:**
--Void armour not added
--Salve amulet not added
--Special attacks not added
+**Later versions will include:**
+- Item slot selevtion, so you don't have to find out your bonuses yourself
+- HiScore fetch for stats
+- Special attacks, salve amulet, void gear, opponents attacks style (when fighting players).
+- Possibly ranged mode too
 
-**To-do list**
--Better attack speed options
--Hiscore fetch for stats
--Item selection for each item slot for more pleasant bonus calculation
 
+## Nerd stuff
 
 ### Generating jar file using Maven
 
