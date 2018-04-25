@@ -5,6 +5,7 @@
  */
 package fi.TheMorshu.dpscalculator.MainUI;
 
+import fi.TheMorshu.dpscalculator.Logic.BonusCalculator;
 import fi.TheMorshu.dpscalculator.Logic.DPScalc;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -29,6 +30,7 @@ public class MainUI extends Application {
     public void start(Stage window) throws ClassNotFoundException {
 
         DPScalc dpsCalc = new DPScalc();
+        BonusCalculator bonusCalc = new BonusCalculator();
         
          
         //Teksielementit ja kentät
@@ -46,6 +48,17 @@ public class MainUI extends Application {
         Label potionLabel = new Label("Potion: ");
         Label prayerLabel = new Label("Prayer: ");
         Label slayerLabel = new Label("Slayer task (y/n): ");
+        Label typeLabel = new Label("Attack type: ");
+        Label weaponLabel = new Label("Weapon: ");
+        Label helmLabel = new Label("Helmet: ");
+        Label amuletLabel = new Label("Amulet: ");
+        Label bodyLabel = new Label("Body: ");
+        Label legsLabel = new Label("Legs: ");
+        Label bootsLabel = new Label("Boots: ");
+        Label capeLabel = new Label("Cape: ");
+        Label shieldLabel = new Label("Shield: ");
+        Label glovesLabel = new Label("Gloves: ");
+        Label ringLabel = new Label("Ring: ");
         TextField slayerInput = new TextField();
         
         ComboBox attackStyleBox = new ComboBox();
@@ -63,6 +76,50 @@ public class MainUI extends Application {
         ComboBox attackSpeedBox = new ComboBox();
         attackSpeedBox.getItems().addAll("3", "4", "5", "6", "7");
         attackSpeedBox.setValue("6");
+        
+        ComboBox weaponBox = new ComboBox();
+        weaponBox.getItems().addAll(bonusCalc.getAllWeapons());
+        weaponBox.setValue("none");
+        
+        ComboBox typeBox = new ComboBox();
+        typeBox.getItems().addAll("stab", "slash", "crush");
+        typeBox.setValue("stab");
+        
+        ComboBox helmetBox = new ComboBox();
+        helmetBox.getItems().addAll("none");
+        helmetBox.setValue("none");
+        
+        ComboBox amuletBox = new ComboBox();
+        amuletBox.getItems().addAll("none");
+        amuletBox.setValue("none");
+        
+        ComboBox bodyBox = new ComboBox();
+        bodyBox.getItems().addAll("none");
+        bodyBox.setValue("none");
+        
+        ComboBox legsBox = new ComboBox();
+        legsBox.getItems().addAll("none");
+        legsBox.setValue("none");
+        
+        ComboBox bootsBox = new ComboBox();
+        bootsBox.getItems().addAll("none");
+        bootsBox.setValue("none");
+        
+        ComboBox capeBox = new ComboBox();
+        capeBox.getItems().addAll("none");
+        capeBox.setValue("none");
+        
+        ComboBox glovesBox = new ComboBox();
+        glovesBox.getItems().addAll("none");
+        glovesBox.setValue("none");
+        
+        ComboBox ringBox = new ComboBox();
+        ringBox.getItems().addAll("none");
+        ringBox.setValue("none");
+        
+        ComboBox shieldBox = new ComboBox();
+        shieldBox.getItems().addAll("none");
+        shieldBox.setValue("none");
 
         Label maxHit = new Label("Max hit: ");
         Label hitChance = new Label("Hit chance: ");
@@ -83,6 +140,7 @@ public class MainUI extends Application {
         
         //Napit
         Button calculate = new Button("Calculate! -->");
+        Button getBonuses = new Button("Get bonuses!");
         
         //Asettelut
         GridPane dpsGUI = new GridPane();
@@ -114,6 +172,30 @@ public class MainUI extends Application {
         dpsGUI.add(maxHit, 4, 2);
         dpsGUI.add(hitChance, 4, 3);
         dpsGUI.add(dps, 4, 4);
+        dpsGUI.add(typeLabel, 5, 4);
+        dpsGUI.add(typeBox, 6, 4);
+        dpsGUI.add(weaponLabel, 5, 5);
+        dpsGUI.add(weaponBox, 6, 5);
+        dpsGUI.add(helmLabel, 5, 6);
+        dpsGUI.add(helmetBox, 6, 6);
+        dpsGUI.add(amuletLabel, 5, 7);
+        dpsGUI.add(amuletBox, 6, 7);
+        dpsGUI.add(bodyLabel, 5, 8);
+        dpsGUI.add(bodyBox, 6, 8);
+        dpsGUI.add(legsLabel, 5, 9);
+        dpsGUI.add(legsBox, 6, 9);
+        dpsGUI.add(bootsLabel, 5, 10);
+        dpsGUI.add(bootsBox, 6, 10);
+        dpsGUI.add(glovesLabel, 5, 11);
+        dpsGUI.add(glovesBox, 6, 11);
+        dpsGUI.add(ringLabel, 5, 12);
+        dpsGUI.add(ringBox, 6, 12);
+        dpsGUI.add(capeLabel, 5, 13);
+        dpsGUI.add(capeBox, 6, 13);
+        dpsGUI.add(shieldLabel, 5, 14);
+        dpsGUI.add(shieldBox, 6, 14);
+        dpsGUI.add(getBonuses, 3, 2);
+        
 
         //Näkymät
         Scene dpsScene = new Scene(dpsGUI, 1000, 400);
@@ -135,6 +217,13 @@ public class MainUI extends Application {
             hitChance.setText("Hit chance: "+dpsCalc.getHitChance());
             dps.setText("Dps: "+dpsCalc.getDps());
 
+        });
+        
+        getBonuses.setOnAction((event) -> {
+            bonusCalc.changeWeapon(weaponBox.getValue().toString(), typeBox.getValue().toString());
+            attackBonusInput.setText(""+bonusCalc.getAttackBonus(typeBox.getValue().toString()));
+            strBonusInput.setText(""+bonusCalc.getStrBonus());
+            attackSpeedBox.setValue(""+bonusCalc.getAttackSpeed());
         });
         
         window.setTitle("DPS calculator by Sijoittaja");

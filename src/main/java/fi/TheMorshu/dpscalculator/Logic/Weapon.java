@@ -46,6 +46,19 @@ public class Weapon {
     public int getStrBonus() {
         return strBonus;
     }
+    
+    public int getAttBonus(String type) {
+        if (type.equals("stab")) {
+            return getStabBonus();
+        }
+        if (type.equals("slash")) {
+            return getSlashBonus();
+        }
+        if (type.equals("crush")) {
+            return getCrushBonus();
+        }
+        return 0;
+    }
 
     public void setStrBonus(int strBonus) {
         this.strBonus = strBonus;
