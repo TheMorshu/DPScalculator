@@ -15,6 +15,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -139,8 +140,8 @@ public class MainUI extends Application {
         slayerInput.setText("n");
         
         //Napit
-        Button calculate = new Button("Calculate! -->");
-        Button getBonuses = new Button("Get bonuses!");
+        Button calculate = new Button("Calculate!");
+        Button getBonuses = new Button("<-- Get bonuses!");
         
         //Asettelut
         GridPane dpsGUI = new GridPane();
@@ -168,37 +169,38 @@ public class MainUI extends Application {
         dpsGUI.add(slayerLabel, 0, 10);
         dpsGUI.add(slayerInput, 1, 10);
         dpsGUI.add(attackStyleBox, 1, 7);
-        dpsGUI.add(calculate, 3, 3);
-        dpsGUI.add(maxHit, 4, 2);
-        dpsGUI.add(hitChance, 4, 3);
-        dpsGUI.add(dps, 4, 4);
-        dpsGUI.add(typeLabel, 5, 4);
-        dpsGUI.add(typeBox, 6, 4);
-        dpsGUI.add(weaponLabel, 5, 5);
-        dpsGUI.add(weaponBox, 6, 5);
-        dpsGUI.add(helmLabel, 5, 6);
-        dpsGUI.add(helmetBox, 6, 6);
-        dpsGUI.add(amuletLabel, 5, 7);
-        dpsGUI.add(amuletBox, 6, 7);
-        dpsGUI.add(bodyLabel, 5, 8);
-        dpsGUI.add(bodyBox, 6, 8);
-        dpsGUI.add(legsLabel, 5, 9);
-        dpsGUI.add(legsBox, 6, 9);
-        dpsGUI.add(bootsLabel, 5, 10);
-        dpsGUI.add(bootsBox, 6, 10);
-        dpsGUI.add(glovesLabel, 5, 11);
-        dpsGUI.add(glovesBox, 6, 11);
-        dpsGUI.add(ringLabel, 5, 12);
-        dpsGUI.add(ringBox, 6, 12);
-        dpsGUI.add(capeLabel, 5, 13);
-        dpsGUI.add(capeBox, 6, 13);
-        dpsGUI.add(shieldLabel, 5, 14);
-        dpsGUI.add(shieldBox, 6, 14);
+        dpsGUI.add(calculate, 0, 11);
+        dpsGUI.add(maxHit, 0, 12);
+        dpsGUI.add(hitChance, 0, 13);
+        dpsGUI.add(dps, 0, 14);
+        dpsGUI.add(typeLabel, 4, 0);
+        dpsGUI.add(typeBox, 5, 0);
+        dpsGUI.add(weaponLabel, 4, 1);
+        dpsGUI.add(weaponBox, 5, 1);
+        dpsGUI.add(helmLabel, 4, 2);
+        dpsGUI.add(helmetBox, 5, 2);
+        dpsGUI.add(amuletLabel, 4, 3);
+        dpsGUI.add(amuletBox, 5, 3);
+        dpsGUI.add(bodyLabel, 4, 4);
+        dpsGUI.add(bodyBox, 5, 4);
+        dpsGUI.add(legsLabel, 4, 5);
+        dpsGUI.add(legsBox, 5, 5);
+        dpsGUI.add(bootsLabel, 4, 6);
+        dpsGUI.add(bootsBox, 5, 6);
+        dpsGUI.add(glovesLabel, 4, 7);
+        dpsGUI.add(glovesBox, 5, 7);
+        dpsGUI.add(ringLabel, 4, 8);
+        dpsGUI.add(ringBox, 5, 8);
+        dpsGUI.add(capeLabel, 4, 9);
+        dpsGUI.add(capeBox, 5, 9);
+        dpsGUI.add(shieldLabel, 4, 10);
+        dpsGUI.add(shieldBox, 5, 10);
         dpsGUI.add(getBonuses, 3, 2);
+        dpsGUI.setHgap(10);
+        dpsGUI.setVgap(10);
         
-
         //Näkymät
-        Scene dpsScene = new Scene(dpsGUI, 1000, 400);
+        Scene dpsScene = new Scene(dpsGUI, 1000, 500);
         
         calculate.setOnAction((event) -> {
             dpsCalc.clear();
@@ -213,9 +215,9 @@ public class MainUI extends Application {
             dpsCalc.setPotion(potionBox.getValue().toString());
             dpsCalc.setStyle(attackStyleBox.getValue().toString());
             dpsCalc.setSlayer(slayerInput.getText());
-            maxHit.setText("Max hit: "+dpsCalc.getMaxHit());
-            hitChance.setText("Hit chance: "+dpsCalc.getHitChance());
-            dps.setText("Dps: "+dpsCalc.getDps());
+            maxHit.setText("Max hit: "+ dpsCalc.getMaxHit());
+            hitChance.setText("Hit chance: "+dpsCalc.round(100*dpsCalc.getHitChance(), 3)+"%");
+            dps.setText("Dps: "+dpsCalc.round(dpsCalc.getDps(),4));
 
         });
         
