@@ -52,10 +52,13 @@ public class BonusCalculator {
         loadWeapons();
         loadHelms();
         loadAmulets();
-        //loadHelms();
-        //loadAmulets();
-        //...
-        
+        loadBodies();
+        loadLegs();
+        loadBoots();
+        loadRings();
+        loadGloves();
+        loadCapes();
+        loadShields();
     }
     
     public void setType(String type) {
@@ -114,6 +117,106 @@ public class BonusCalculator {
         for (int i = 0; i<allAmulets.size(); i++) {
             if (allAmulets.get(i).getName().equals(name)) {
                 wornItems.add(allAmulets.get(i));
+                return;
+            }
+        }
+    }
+    
+    public void loadBodies() {
+        allBodies.add(new WornItem("none", 0,0,0,0));
+        allBodies.add(new WornItem("Fighter torso", 4,0,0,0));
+    }
+    
+    public void changeBody(String name) {
+        for (int i = 0; i<allBodies.size(); i++) {
+            if (allBodies.get(i).getName().equals(name)) {
+                wornItems.add(allBodies.get(i));
+                return;
+            }
+        }
+    }
+    
+    
+    public void loadLegs() {
+        allLegs.add(new WornItem("none", 0,0,0,0));
+        allLegs.add(new WornItem("Bandos tassets", 2,0,0,0));
+    }
+    
+    public void changeLegs(String name) {
+        for (int i = 0; i<allLegs.size(); i++) {
+            if (allLegs.get(i).getName().equals(name)) {
+                wornItems.add(allLegs.get(i));
+                return;
+            }
+        }
+    }
+    
+    public void loadBoots() {
+        allBoots.add(new WornItem("none", 0,0,0,0));
+        allBoots.add(new WornItem("Dragon boots", 4,0,0,0));
+    }
+    
+    public void changeBoots(String name) {
+        for (int i = 0; i<allBoots.size(); i++) {
+            if (allBoots.get(i).getName().equals(name)) {
+                wornItems.add(allBoots.get(i));
+                return;
+            }
+        }
+    }
+    
+    public void loadGloves() {
+        allGloves.add(new WornItem("none", 0,0,0,0));
+        allGloves.add(new WornItem("Barrows gloves", 12,12,12,12));
+    }
+    
+    public void changeGloves(String name) {
+        for (int i = 0; i<allGloves.size(); i++) {
+            if (allGloves.get(i).getName().equals(name)) {
+                wornItems.add(allGloves.get(i));
+                return;
+            }
+        }
+    }
+    
+    public void loadRings() {
+        allRings.add(new WornItem("none", 0,0,0,0));
+        allRings.add(new WornItem("berserker ring", 4,0,0,0));
+        allRings.add(new WornItem("berserker ring (i)", 8,0,0,0));
+    }
+    
+    public void changeRing(String name) {
+        for (int i = 0; i<allRings.size(); i++) {
+            if (allRings.get(i).getName().equals(name)) {
+                wornItems.add(allRings.get(i));
+                return;
+            }
+        }
+    }
+    
+    public void loadCapes() {
+        allCapes.add(new WornItem("none", 0,0,0,0));
+        allCapes.add(new WornItem("Fire cape", 4,1,1,1));
+    }
+    
+    public void changeCape(String name) {
+        for (int i = 0; i<allCapes.size(); i++) {
+            if (allCapes.get(i).getName().equals(name)) {
+                wornItems.add(allCapes.get(i));
+                return;
+            }
+        }
+    }
+    
+    public void loadShields() {
+        allShields.add(new WornItem("none", 0,0,0,0));
+        allShields.add(new WornItem("DFS", 7,0,0,0));
+    }
+    
+    public void changeShield(String name) {
+        for (int i = 0; i<allShields.size(); i++) {
+            if (allShields.get(i).getName().equals(name)) {
+                wornItems.add(allShields.get(i));
                 return;
             }
         }

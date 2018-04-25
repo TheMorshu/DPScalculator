@@ -31,16 +31,9 @@ public class Weapon {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public int getAttackSpeed() {
         return attackSpeed;
-    }
-
-    public void setAttackSpeed(int attackSpeed) {
-        this.attackSpeed = attackSpeed;
     }
 
     public int getStrBonus() {
@@ -60,32 +53,18 @@ public class Weapon {
         return 0;
     }
 
-    public void setStrBonus(int strBonus) {
-        this.strBonus = strBonus;
-    }
 
     public int getStabBonus() {
         return stabBonus;
     }
 
-    public void setStabBonus(int stabBonus) {
-        this.stabBonus = stabBonus;
-    }
 
     public int getSlashBonus() {
         return slashBonus;
     }
 
-    public void setSlashBonus(int slashBonus) {
-        this.slashBonus = slashBonus;
-    }
-
     public int getCrushBonus() {
         return crushBonus;
-    }
-
-    public void setCrushBonus(int crushBonus) {
-        this.crushBonus = crushBonus;
     }
     
     @Override

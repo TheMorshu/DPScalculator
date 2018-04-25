@@ -94,32 +94,32 @@ public class MainUI extends Application {
         amuletBox.setValue(weaponBox.getItems().get(0));
         
         ComboBox bodyBox = new ComboBox();
-        bodyBox.getItems().addAll("none");
-        bodyBox.setValue("none");
+        bodyBox.getItems().addAll(bonusCalc.getAllBodies());
+        bodyBox.setValue(weaponBox.getItems().get(0));
         
         ComboBox legsBox = new ComboBox();
-        legsBox.getItems().addAll("none");
-        legsBox.setValue("none");
+        legsBox.getItems().addAll(bonusCalc.getAllLegs());
+        legsBox.setValue(weaponBox.getItems().get(0));
         
         ComboBox bootsBox = new ComboBox();
-        bootsBox.getItems().addAll("none");
-        bootsBox.setValue("none");
+        bootsBox.getItems().addAll(bonusCalc.getAllBoots());
+        bootsBox.setValue(weaponBox.getItems().get(0));
         
         ComboBox capeBox = new ComboBox();
-        capeBox.getItems().addAll("none");
-        capeBox.setValue("none");
+        capeBox.getItems().addAll(bonusCalc.getAllCapes());
+        capeBox.setValue(weaponBox.getItems().get(0));
         
         ComboBox glovesBox = new ComboBox();
-        glovesBox.getItems().addAll("none");
-        glovesBox.setValue("none");
+        glovesBox.getItems().addAll(bonusCalc.getAllGloves());
+        glovesBox.setValue(weaponBox.getItems().get(0));
         
         ComboBox ringBox = new ComboBox();
-        ringBox.getItems().addAll("none");
-        ringBox.setValue("none");
+        ringBox.getItems().addAll(bonusCalc.getAllRings());
+        ringBox.setValue(weaponBox.getItems().get(0));
         
         ComboBox shieldBox = new ComboBox();
-        shieldBox.getItems().addAll("none");
-        shieldBox.setValue("none");
+        shieldBox.getItems().addAll(bonusCalc.getAllShields());
+        shieldBox.setValue(weaponBox.getItems().get(0));
 
         Label maxHit = new Label("Max hit: ");
         Label hitChance = new Label("Hit chance: ");
@@ -227,6 +227,13 @@ public class MainUI extends Application {
             bonusCalc.changeWeapon(weaponBox.getValue().toString());
             bonusCalc.changeHelm(helmetBox.getValue().toString());
             bonusCalc.changeAmulet(amuletBox.getValue().toString());
+            bonusCalc.changeBody(bodyBox.getValue().toString());
+            bonusCalc.changeLegs(legsBox.getValue().toString());
+            bonusCalc.changeBoots(bootsBox.getValue().toString());
+            bonusCalc.changeGloves(glovesBox.getValue().toString());
+            bonusCalc.changeRing(ringBox.getValue().toString());
+            bonusCalc.changeShield(shieldBox.getValue().toString());
+            bonusCalc.changeCape(capeBox.getValue().toString());
             
             attackBonusInput.setText(""+bonusCalc.getAttackBonus(typeBox.getValue().toString()));
             strBonusInput.setText(""+bonusCalc.getStrBonus());
