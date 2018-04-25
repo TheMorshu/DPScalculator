@@ -12,15 +12,13 @@ package fi.TheMorshu.dpscalculator.Logic;
 public class WornItem {
     
     private String name;
-    private int attackSpeed;
     private int strBonus;
     private int stabBonus;
     private int slashBonus;
     private int crushBonus;
 
-    public WornItem(String name, int attackSpeed, int strBonus, int stabBonus, int slashBonus, int crushBonus) {
+    public WornItem(String name, int strBonus, int stabBonus, int slashBonus, int crushBonus) {
         this.name = name;
-        this.attackSpeed = attackSpeed;
         this.strBonus = strBonus;
         this.stabBonus = stabBonus;
         this.slashBonus = slashBonus;
@@ -33,14 +31,6 @@ public class WornItem {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getAttackSpeed() {
-        return attackSpeed;
-    }
-
-    public void setAttackSpeed(int attackSpeed) {
-        this.attackSpeed = attackSpeed;
     }
 
     public int getStrBonus() {
@@ -75,6 +65,23 @@ public class WornItem {
         this.crushBonus = crushBonus;
     }
     
+    public int getAttBonus(String type) {
+        if (type.equals("stab")) {
+            return getStabBonus();
+        }
+        if (type.equals("slash")) {
+            return getSlashBonus();
+        }
+        if (type.equals("crush")) {
+            return getCrushBonus();
+        }
+        return 0;
+    }
+    
+    @Override
+    public String toString() {
+        return name;
+    }
     
     
     

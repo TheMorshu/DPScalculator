@@ -79,19 +79,19 @@ public class MainUI extends Application {
         
         ComboBox weaponBox = new ComboBox();
         weaponBox.getItems().addAll(bonusCalc.getAllWeapons());
-        weaponBox.setValue("none");
+        weaponBox.setValue(weaponBox.getItems().get(0));
         
         ComboBox typeBox = new ComboBox();
         typeBox.getItems().addAll("stab", "slash", "crush");
         typeBox.setValue("stab");
         
         ComboBox helmetBox = new ComboBox();
-        helmetBox.getItems().addAll("none");
-        helmetBox.setValue("none");
+        helmetBox.getItems().addAll(bonusCalc.getAllHelms());
+        helmetBox.setValue(weaponBox.getItems().get(0));
         
         ComboBox amuletBox = new ComboBox();
-        amuletBox.getItems().addAll("none");
-        amuletBox.setValue("none");
+        amuletBox.getItems().addAll(bonusCalc.getAllAmulets());
+        amuletBox.setValue(weaponBox.getItems().get(0));
         
         ComboBox bodyBox = new ComboBox();
         bodyBox.getItems().addAll("none");
@@ -220,7 +220,14 @@ public class MainUI extends Application {
         });
         
         getBonuses.setOnAction((event) -> {
-            bonusCalc.changeWeapon(weaponBox.getValue().toString(), typeBox.getValue().toString());
+            bonusCalc.clearWornItems();
+            
+            bonusCalc.setType(typeBox.getValue().toString());
+            
+            bonusCalc.changeWeapon(weaponBox.getValue().toString());
+            bonusCalc.changeHelm(helmetBox.getValue().toString());
+            bonusCalc.changeAmulet(amuletBox.getValue().toString());
+            
             attackBonusInput.setText(""+bonusCalc.getAttackBonus(typeBox.getValue().toString()));
             strBonusInput.setText(""+bonusCalc.getStrBonus());
             attackSpeedBox.setValue(""+bonusCalc.getAttackSpeed());

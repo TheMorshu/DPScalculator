@@ -87,5 +87,10 @@ public class Weapon {
     public void setCrushBonus(int crushBonus) {
         this.crushBonus = crushBonus;
     }
+    
+    @Override
+    public String toString() {
+        return name;
+    }
   
 }
