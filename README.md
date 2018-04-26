@@ -3,8 +3,9 @@
 This project is under work and will be finished once I have enough time! Currently only the max hit calc is working.
 NOTE: Currently only for melee!
 
-### FIRST RELEASE!
-[Download here!](https://github.com/TheMorshu/DPScalculator/releases)
+### Downloads!
+
+[Downloads here!](https://github.com/TheMorshu/DPScalculator/releases)
 
 **Beta version 0.2 update:**
 - Item slots added! You can add your own items directly to csv file with notepad or Excel!
