@@ -7,6 +7,7 @@ package fi.TheMorshu.dpscalculator.MainUI;
 
 import fi.TheMorshu.dpscalculator.Logic.BonusCalculator;
 import fi.TheMorshu.dpscalculator.Logic.DPScalc;
+import java.io.FileNotFoundException;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -28,7 +29,7 @@ import javafx.stage.Stage;
 public class MainUI extends Application {
     
     @Override
-    public void start(Stage window) throws ClassNotFoundException {
+    public void start(Stage window) throws ClassNotFoundException, FileNotFoundException {
 
         DPScalc dpsCalc = new DPScalc();
         BonusCalculator bonusCalc = new BonusCalculator();

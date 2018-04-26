@@ -5,6 +5,7 @@
  */
 package fi.TheMorshu.dpscalculator.Logic;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 /**
@@ -29,11 +30,12 @@ public class BonusCalculator {
     
     private ArrayList<WornItem> wornItems;
     private Weapon weapon;
+    private ItemDao itemDao;
     //these are items in use
     
     private String attackType;
 
-    public BonusCalculator() {
+    public BonusCalculator() throws FileNotFoundException {
         this.wornItems = new ArrayList();
         this.allWeapons = new ArrayList();
         this.allHelms = new ArrayList();
@@ -45,10 +47,11 @@ public class BonusCalculator {
         this.allRings = new ArrayList();
         this.allGloves = new ArrayList();
         this.allShields = new ArrayList();
+        this.itemDao = new ItemDao();
         init();
     }
     
-    public void init() {
+    public void init() throws FileNotFoundException {
         loadWeapons();
         loadHelms();
         loadAmulets();
@@ -65,10 +68,8 @@ public class BonusCalculator {
         this.attackType = type;
     }
     
-    public void loadWeapons() { //fills wep list with all possible weapons
-        allWeapons.add(new Weapon("none", 6, 0,0,0,0));
-        allWeapons.add(new Weapon("Abyssal whip", 6, 82,0,82,0));
-        allWeapons.add(new Weapon("Godsword", 4, 132,0,132,80));
+    public void loadWeapons() throws FileNotFoundException { //fills wep list with all possible weapons
+        allWeapons = this.itemDao.getWeapons();
     }
     
     public ArrayList<Weapon> getAllWeapons() {
@@ -104,9 +105,8 @@ public class BonusCalculator {
         }
     }
     
-    public void loadAmulets() {
-        allAmulets.add(new WornItem("none", 0,0,0,0));
-        allAmulets.add(new WornItem("Amulet of Str", 10,0,0,0));
+    public void loadAmulets() throws FileNotFoundException {
+        allAmulets = this.itemDao.getAmulets();
     }
     
     public ArrayList<WornItem> getAllAmulets() {
@@ -122,9 +122,8 @@ public class BonusCalculator {
         }
     }
     
-    public void loadBodies() {
-        allBodies.add(new WornItem("none", 0,0,0,0));
-        allBodies.add(new WornItem("Fighter torso", 4,0,0,0));
+    public void loadBodies() throws FileNotFoundException {
+        allBodies = this.itemDao.getBodies();
     }
     
     public void changeBody(String name) {
@@ -137,9 +136,8 @@ public class BonusCalculator {
     }
     
     
-    public void loadLegs() {
-        allLegs.add(new WornItem("none", 0,0,0,0));
-        allLegs.add(new WornItem("Bandos tassets", 2,0,0,0));
+    public void loadLegs() throws FileNotFoundException {
+        allLegs = this.itemDao.getLegs();
     }
     
     public void changeLegs(String name) {
@@ -151,9 +149,8 @@ public class BonusCalculator {
         }
     }
     
-    public void loadBoots() {
-        allBoots.add(new WornItem("none", 0,0,0,0));
-        allBoots.add(new WornItem("Dragon boots", 4,0,0,0));
+    public void loadBoots() throws FileNotFoundException {
+        allBoots = this.itemDao.getBoots();
     }
     
     public void changeBoots(String name) {
@@ -165,9 +162,8 @@ public class BonusCalculator {
         }
     }
     
-    public void loadGloves() {
-        allGloves.add(new WornItem("none", 0,0,0,0));
-        allGloves.add(new WornItem("Barrows gloves", 12,12,12,12));
+    public void loadGloves() throws FileNotFoundException {
+        allGloves = this.itemDao.getGloves();
     }
     
     public void changeGloves(String name) {
@@ -179,10 +175,8 @@ public class BonusCalculator {
         }
     }
     
-    public void loadRings() {
-        allRings.add(new WornItem("none", 0,0,0,0));
-        allRings.add(new WornItem("berserker ring", 4,0,0,0));
-        allRings.add(new WornItem("berserker ring (i)", 8,0,0,0));
+    public void loadRings() throws FileNotFoundException {
+        allRings = this.itemDao.getRings();
     }
     
     public void changeRing(String name) {
@@ -194,9 +188,8 @@ public class BonusCalculator {
         }
     }
     
-    public void loadCapes() {
-        allCapes.add(new WornItem("none", 0,0,0,0));
-        allCapes.add(new WornItem("Fire cape", 4,1,1,1));
+    public void loadCapes() throws FileNotFoundException {
+        allCapes = this.itemDao.getCapes();
     }
     
     public void changeCape(String name) {
@@ -208,9 +201,8 @@ public class BonusCalculator {
         }
     }
     
-    public void loadShields() {
-        allShields.add(new WornItem("none", 0,0,0,0));
-        allShields.add(new WornItem("DFS", 7,0,0,0));
+    public void loadShields() throws FileNotFoundException {
+        allShields = this.itemDao.getShields();
     }
     
     public void changeShield(String name) {
