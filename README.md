@@ -6,12 +6,14 @@ NOTE: Currently only for melee!
 ### FIRST RELEASE!
 [Download here!](https://github.com/TheMorshu/DPScalculator/releases)
 
+**Beta version 0.2 update:**
+- Item slots added! You can add your own items directly to csv file with notepad or Excel!
+
 **Beta version 0.1 includes:**
 - Basic UI that should do the work, will be improved later
 - Max hit, hit chance and DPS calculator for melee including potions, prayers, attack styles, levels, bonuses, attack style and slayer (excluding special attacks, salve amulet and void gear).
 
 **Later versions will include:**
-- Item slot selevtion, so you don't have to find out your bonuses yourself
 - HiScore fetch for stats
 - Special attacks, salve amulet, void gear, opponents attacks style (when fighting players).
 - Possibly ranged mode too
