@@ -5,7 +5,7 @@ NOTE: Currently only for melee!
 
 ### Downloads!
 
-[Downloads here!](https://github.com/TheMorshu/DPScalculator/releases)
+[Downloads ZIP here!](https://github.com/TheMorshu/DPScalculator/releases)
 
 **Beta version 0.2 update:**
 - Item slots added! You can add your own items directly to csv file with notepad or Excel!
@@ -40,5 +40,8 @@ On Debian and Windows you should be able to run the jar by simply opening it. If
 ```
 java -jar DPScalculator-1.0-SNAPSHOT.jar
 ```
+in terminal. 
 
-in terminal. The file can be dowloaded directly [HERE](https://github.com/TheMorshu/DPScalculator/blob/master/DPScalculator-1.0-SNAPSHOT.jar). You can also generate jar file yourseld.
+**NOTE: You must download and save all csv files in the same folder as the jar file in order to run the calculator!**
+
+The ZIP (jar+csv files) can also be dowloaded directly [HERE](https://github.com/TheMorshu/DPScalculator/releases).
