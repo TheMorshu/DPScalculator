@@ -1,4 +1,16 @@
 name;speed;str;stab;slash;crush
 none;6;0;0;0;0
-abyssal whip;6;82;0;82;0
-Godsword;4;132;132;80;0
+Abyssal dagger;6;75;75;40;-4
+Abyssal tentacle;6;86;0;90;0
+Abyssal whip;6;82;0;82;0
+Brine sabre;6;46;7;47;-2
+Dragon scimitar;6;66;8;67;-2
+Elder maul;4;147;0;0;135
+Godsword;4;132;0;132;80
+Rune 2h sword;3;70;-4;69;50
+Rune battleaxe;4;64;-2;48;43
+Rune scimitar;6;44;7;45;-2
+Saradomin sword;6;82;0;82;60
+Saradomin's blessed sword;6;88;0;100;60
+Tzhaar-ket-om;3;85;0;0;80
+Zamorakian spear;6;75;85;65;65
