@@ -7,6 +7,9 @@ NOTE: Currently only for melee!
 
 [Downloads ZIP here!](https://github.com/TheMorshu/DPScalculator/releases)
 
+**Beta version 0.2.1 update (BETA release 3):**
+- New items added! Minor bug fixes.
+
 **Beta version 0.2 update:**
 - Item slots added! You can add your own items directly to csv file with notepad or Excel!
 
