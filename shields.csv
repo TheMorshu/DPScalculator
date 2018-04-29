@@ -1,3 +1,5 @@
 name;str;stab;slash;crush
 none;0;0;0;0
-DFS;7;0;0;0
+Rune defender;5;20;19;18
+Dragon defender;6;25;24;23
+Dragonfire shield;7;0;0;0

@@ -1,4 +1,6 @@
 name;str;stab;slash;crush
 none;0;0;0;0
-Berserker ring;4;0;0;0
 Berserker ring (i);8;0;0;0
+Berserker ring;4;0;0;0
+Warrior ring (i);0;0;8;0
+Warrior ring;0;0;4;0

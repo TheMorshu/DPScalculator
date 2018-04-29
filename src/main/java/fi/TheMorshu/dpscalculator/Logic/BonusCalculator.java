@@ -87,9 +87,8 @@ public class BonusCalculator {
     
     
     
-    public void loadHelms() {
-        allHelms.add(new WornItem("none", 0,0,0,0));
-        allHelms.add(new WornItem("Berserker helm", 3,0,0,0));
+    public void loadHelms() throws FileNotFoundException {
+        allHelms = this.itemDao.getHelms();
     }
     
     public ArrayList<WornItem> getAllHelms() {
