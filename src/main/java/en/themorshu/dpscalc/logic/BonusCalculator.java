@@ -6,7 +6,6 @@
 package en.themorshu.dpscalc.logic;
 
 import en.themorshu.dpscalc.dao.ItemDao;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 /**
@@ -36,7 +35,7 @@ public class BonusCalculator {
     
     private String attackType;
 
-    public BonusCalculator() throws FileNotFoundException {
+    public BonusCalculator() {
         this.wornItems = new ArrayList();
         this.allWeapons = new ArrayList();
         this.allHelms = new ArrayList();
@@ -52,7 +51,7 @@ public class BonusCalculator {
         init();
     }
     
-    public void init() throws FileNotFoundException {
+    public void init() {
         loadWeapons();
         loadHelms();
         loadAmulets();
@@ -69,7 +68,7 @@ public class BonusCalculator {
         this.attackType = type;
     }
     
-    public void loadWeapons() throws FileNotFoundException { //fills wep list with all possible weapons
+    public void loadWeapons() { //fills wep list with all possible weapons
         allWeapons = this.itemDao.getWeapons();
     }
     
@@ -88,7 +87,7 @@ public class BonusCalculator {
     
     
     
-    public void loadHelms() throws FileNotFoundException {
+    public void loadHelms() {
         allHelms = this.itemDao.getHelms();
     }
     
@@ -105,7 +104,7 @@ public class BonusCalculator {
         }
     }
     
-    public void loadAmulets() throws FileNotFoundException {
+    public void loadAmulets() {
         allAmulets = this.itemDao.getAmulets();
     }
     
@@ -122,7 +121,7 @@ public class BonusCalculator {
         }
     }
     
-    public void loadBodies() throws FileNotFoundException {
+    public void loadBodies() {
         allBodies = this.itemDao.getBodies();
     }
     
@@ -136,7 +135,7 @@ public class BonusCalculator {
     }
     
     
-    public void loadLegs() throws FileNotFoundException {
+    public void loadLegs() {
         allLegs = this.itemDao.getLegs();
     }
     
@@ -149,7 +148,7 @@ public class BonusCalculator {
         }
     }
     
-    public void loadBoots() throws FileNotFoundException {
+    public void loadBoots() {
         allBoots = this.itemDao.getBoots();
     }
     
@@ -162,7 +161,7 @@ public class BonusCalculator {
         }
     }
     
-    public void loadGloves() throws FileNotFoundException {
+    public void loadGloves() {
         allGloves = this.itemDao.getGloves();
     }
     
@@ -175,7 +174,7 @@ public class BonusCalculator {
         }
     }
     
-    public void loadRings() throws FileNotFoundException {
+    public void loadRings() {
         allRings = this.itemDao.getRings();
     }
     
@@ -188,7 +187,7 @@ public class BonusCalculator {
         }
     }
     
-    public void loadCapes() throws FileNotFoundException {
+    public void loadCapes() {
         allCapes = this.itemDao.getCapes();
     }
     
@@ -201,7 +200,7 @@ public class BonusCalculator {
         }
     }
     
-    public void loadShields() throws FileNotFoundException {
+    public void loadShields() {
         allShields = this.itemDao.getShields();
     }
     

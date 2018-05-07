@@ -26,7 +26,7 @@ import javafx.stage.Stage;
 public class MainUI extends Application {
     
     @Override
-    public void start(Stage window) throws ClassNotFoundException, FileNotFoundException {
+    public void start(Stage window) throws FileNotFoundException {
 
         DPScalc dpsCalc = new DPScalc();
         BonusCalculator bonusCalc = new BonusCalculator();
@@ -86,39 +86,39 @@ public class MainUI extends Application {
         
         ComboBox helmetBox = new ComboBox();
         helmetBox.getItems().addAll(bonusCalc.getAllHelms());
-        helmetBox.setValue(weaponBox.getItems().get(0));
+        helmetBox.setValue(helmetBox.getItems().get(0));
         
         ComboBox amuletBox = new ComboBox();
         amuletBox.getItems().addAll(bonusCalc.getAllAmulets());
-        amuletBox.setValue(weaponBox.getItems().get(0));
+        amuletBox.setValue(amuletBox.getItems().get(0));
         
         ComboBox bodyBox = new ComboBox();
         bodyBox.getItems().addAll(bonusCalc.getAllBodies());
-        bodyBox.setValue(weaponBox.getItems().get(0));
+        bodyBox.setValue(bodyBox.getItems().get(0));
         
         ComboBox legsBox = new ComboBox();
         legsBox.getItems().addAll(bonusCalc.getAllLegs());
-        legsBox.setValue(weaponBox.getItems().get(0));
+        legsBox.setValue(legsBox.getItems().get(0));
         
         ComboBox bootsBox = new ComboBox();
         bootsBox.getItems().addAll(bonusCalc.getAllBoots());
-        bootsBox.setValue(weaponBox.getItems().get(0));
+        bootsBox.setValue(bootsBox.getItems().get(0));
         
         ComboBox capeBox = new ComboBox();
         capeBox.getItems().addAll(bonusCalc.getAllCapes());
-        capeBox.setValue(weaponBox.getItems().get(0));
+        capeBox.setValue(capeBox.getItems().get(0));
         
         ComboBox glovesBox = new ComboBox();
         glovesBox.getItems().addAll(bonusCalc.getAllGloves());
-        glovesBox.setValue(weaponBox.getItems().get(0));
+        glovesBox.setValue(glovesBox.getItems().get(0));
         
         ComboBox ringBox = new ComboBox();
         ringBox.getItems().addAll(bonusCalc.getAllRings());
-        ringBox.setValue(weaponBox.getItems().get(0));
+        ringBox.setValue(ringBox.getItems().get(0));
         
         ComboBox shieldBox = new ComboBox();
         shieldBox.getItems().addAll(bonusCalc.getAllShields());
-        shieldBox.setValue(weaponBox.getItems().get(0));
+        shieldBox.setValue(shieldBox.getItems().get(0));
 
         Label maxHit = new Label("Max hit: ");
         Label hitChance = new Label("Hit chance: ");
