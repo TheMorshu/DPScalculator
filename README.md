@@ -1,10 +1,28 @@
 # DPS (melee) calculator for OSRS by Sijoittaja/TheMorshu/Ilmari Heiskanen
 
-This project is under work and will be finished once I have enough time.
+This project is under work and will be finished once I have enough time. 
 
-## Downloads!
+## Description
+
+What is working:
+- Hit chance, max hit and dps calculators. 
+- Potions, prayers, attack styles, levels, attack/str/def bonuses and slayer tass (yes/no) are concidered in calculations.
+- Item slot selection.
+
+What will be added later:
+- HiScore fetch for stats
+- Special attacks, salve amulet, void gear, opponents attacks style (when fighting players).
+- Possibly ranged mode too
+
+
+## Documentation
+
+[Manual (will be added later..)]()
+
+## Downloads
 
 [Downloads ZIP here!](https://github.com/TheMorshu/DPScalculator/releases)
+[Update notes](https://github.com/TheMorshu/DPScalculator/releases)
 
 **Beta version 0.2.2 update (BETA release 4):**
 - Code refractoring. Crash fixed when csv file(s) missing.
@@ -18,12 +36,6 @@ This project is under work and will be finished once I have enough time.
 **Beta version 0.1 includes:**
 - Basic UI that should do the work, will be improved later
 - Max hit, hit chance and DPS calculator for melee including potions, prayers, attack styles, levels, bonuses, attack style and slayer (excluding special attacks, salve amulet and void gear).
-
-## Later versions will include:
-- HiScore fetch for stats
-- Special attacks, salve amulet, void gear, opponents attacks style (when fighting players).
-- Possibly ranged mode too
-
 
 ## Nerd stuff
 
