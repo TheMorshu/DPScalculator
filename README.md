@@ -17,12 +17,12 @@ What will be added later:
 
 ## Documentation
 
-[Manual (will be added later..)]()
+[Manual (will be added later..)](https://github.com/TheMorshu/DPScalculator/tree/master/documentation/manual.md)
 
 ## Downloads
 
 [Downloads ZIP here!](https://github.com/TheMorshu/DPScalculator/releases)
-[Update notes](https://github.com/TheMorshu/DPScalculator/releases)
+[Patch notes](https://github.com/TheMorshu/DPScalculator/tree/master/documentation/patchnotes)
 
 **Beta version 0.2.2 update (BETA release 4):**
 - Code refractoring. Crash fixed when csv file(s) missing.
