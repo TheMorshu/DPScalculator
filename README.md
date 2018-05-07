@@ -19,12 +19,11 @@ What will be added later:
 
 [Manual (will be added later..)](https://github.com/TheMorshu/DPScalculator/tree/master/documentation/manual.md)
 
-## Downloads
-
-[Downloads ZIP here!](https://github.com/TheMorshu/DPScalculator/releases)
-
 [Patch notes](https://github.com/TheMorshu/DPScalculator/tree/master/documentation/patchnotes)
 
+## Downloads
+
+[Download ZIPs here!](https://github.com/TheMorshu/DPScalculator/releases)
 
 ## Nerd stuff
 
@@ -51,3 +50,15 @@ in terminal.
 **NOTE: You must download and save all csv files and create and place them in folder "csv", which must be in same folder as the jar file!**
 
 The ZIP (jar+csv files) can also be dowloaded directly [HERE](https://github.com/TheMorshu/DPScalculator/releases).
+
+### Running JUnit tests and jacoco
+
+Will be added later
+
+### Running CheckStyle
+
+Will be added later
+
+### Running JavaDoc
+
+Will be added later
