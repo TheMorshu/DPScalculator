@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fi.TheMorshu.dpscalc.dao;
+package en.themorshu.dpscalc.dao;
 
-import fi.themorshu.dpscalc.logic.Weapon;
-import fi.themorshu.dpscalc.logic.WornItem;
+import en.themorshu.dpscalc.logic.Weapon;
+import en.themorshu.dpscalc.logic.WornItem;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

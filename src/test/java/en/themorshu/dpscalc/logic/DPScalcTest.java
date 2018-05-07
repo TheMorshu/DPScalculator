@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fi.themorshu.dpscalc.logic;
+package en.themorshu.dpscalc.logic;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author ilmar
  */
-public class WornItemTest {
+public class DPScalcTest {
     
-    public WornItemTest() {
+    public DPScalcTest() {
     }
     
     @BeforeClass

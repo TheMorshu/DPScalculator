@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fi.themorshu.dpscalc.ui;
+package en.themorshu.dpscalc.ui;
 
-import fi.themorshu.dpscalc.logic.BonusCalculator;
-import fi.themorshu.dpscalc.logic.DPScalc;
+import en.themorshu.dpscalc.logic.BonusCalculator;
+import en.themorshu.dpscalc.logic.DPScalc;
 import java.io.FileNotFoundException;
 import javafx.application.Application;
 import javafx.geometry.Insets;
