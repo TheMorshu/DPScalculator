@@ -25,9 +25,11 @@ What will be added later:
 
 [Download ZIPs here!](https://github.com/TheMorshu/DPScalculator/releases)
 
-## Nerd stuff
+## Running the application
 
-### Generating jar file using Maven
+Easiest way to use the application is simply by downloading the newest release and running the jar file!
+
+### Generating jar file yourself using Maven (if you don't want to download jar)
 
 If you feel uncomfortable using the already generated jar file, you can generate the jar file yourself from the source code. Feel free to check the source code if you want to, it's not long! You can package the file using maven with the following code in terminal:
 
@@ -38,18 +40,18 @@ mvn package
 In folder _target_ jar-file called _DPScalculator-1.0-SNAPSHOT.jar_ will be generated..
 
 
-### Running the file
+### Running the jar file
 
-On Debian and Windows you should be able to run the jar by simply opening it. If not, please open terminal in correct folder and type
+On Windows you should be able to run the jar by simply opening it (double click). If not, please open terminal in correct folder and type:
 
 ```
 java -jar DPScalculator-1.0-SNAPSHOT.jar
 ```
-in terminal. 
+in terminal. In Linux/OSX this must be done by default (no double clickery)
 
-**NOTE: You must download and save all csv files and create and place them in folder "csv", which must be in same folder as the jar file!**
+**NOTE: You must download and save all csv files and create and place them in folder "csv", which must be in same folder as the jar file! If you downloaded a release, csv folder and files should be there already!**
 
-The ZIP (jar+csv files) can also be dowloaded directly [HERE](https://github.com/TheMorshu/DPScalculator/releases).
+The ZIP (jar+csv files) can be dowloaded directly [HERE](https://github.com/TheMorshu/DPScalculator/releases).
 
 ### Running JUnit tests and jacoco
 
