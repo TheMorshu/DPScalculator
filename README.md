@@ -1,11 +1,13 @@
-## DPS (melee) calculator for OSRS by Sijoittaja/TheMorshu/Ilmari Heiskanen
+# DPS (melee) calculator for OSRS by Sijoittaja/TheMorshu/Ilmari Heiskanen
 
-This project is under work and will be finished once I have enough time! Currently only the max hit calc is working.
-NOTE: Currently only for melee!
+This project is under work and will be finished once I have enough time.
 
-### Downloads!
+## Downloads!
 
 [Downloads ZIP here!](https://github.com/TheMorshu/DPScalculator/releases)
+
+**Beta version 0.2.2 update (BETA release 4):**
+- Code refractoring. Crash fixed when csv file(s) missing.
 
 **Beta version 0.2.1 update (BETA release 3):**
 - New items added! Minor bug fixes.
@@ -17,7 +19,7 @@ NOTE: Currently only for melee!
 - Basic UI that should do the work, will be improved later
 - Max hit, hit chance and DPS calculator for melee including potions, prayers, attack styles, levels, bonuses, attack style and slayer (excluding special attacks, salve amulet and void gear).
 
-**Later versions will include:**
+## Later versions will include:
 - HiScore fetch for stats
 - Special attacks, salve amulet, void gear, opponents attacks style (when fighting players).
 - Possibly ranged mode too
@@ -45,6 +47,6 @@ java -jar DPScalculator-1.0-SNAPSHOT.jar
 ```
 in terminal. 
 
-**NOTE: You must download and save all csv files in the same folder as the jar file in order to run the calculator!**
+**NOTE: You must download and save all csv files and create and place them in folder "csv", which must be in same folder as the jar file!**
 
 The ZIP (jar+csv files) can also be dowloaded directly [HERE](https://github.com/TheMorshu/DPScalculator/releases).
