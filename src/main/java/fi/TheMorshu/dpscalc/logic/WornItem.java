@@ -3,24 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fi.TheMorshu.dpscalculator.Logic;
+package fi.themorshu.dpscalc.logic;
 
 /**
  *
  * @author ilmari
  */
-public class Weapon {
+public class WornItem {
     
     private String name;
-    private int attackSpeed;
     private int strBonus;
     private int stabBonus;
     private int slashBonus;
     private int crushBonus;
 
-    public Weapon(String name, int attackSpeed, int strBonus, int stabBonus, int slashBonus, int crushBonus) {
+    public WornItem(String name, int strBonus, int stabBonus, int slashBonus, int crushBonus) {
         this.name = name;
-        this.attackSpeed = attackSpeed;
         this.strBonus = strBonus;
         this.stabBonus = stabBonus;
         this.slashBonus = slashBonus;
@@ -31,14 +29,24 @@ public class Weapon {
         return name;
     }
 
-
-    public int getAttackSpeed() {
-        return attackSpeed;
-    }
-
     public int getStrBonus() {
         return strBonus;
     }
+
+
+    public int getStabBonus() {
+        return stabBonus;
+    }
+
+    public int getSlashBonus() {
+        return slashBonus;
+    }
+
+
+    public int getCrushBonus() {
+        return crushBonus;
+    }
+
     
     public int getAttBonus(String type) {
         if (type.equals("stab")) {
@@ -52,24 +60,12 @@ public class Weapon {
         }
         return 0;
     }
-
-
-    public int getStabBonus() {
-        return stabBonus;
-    }
-
-
-    public int getSlashBonus() {
-        return slashBonus;
-    }
-
-    public int getCrushBonus() {
-        return crushBonus;
-    }
     
     @Override
     public String toString() {
         return name;
     }
-  
+    
+    
+    
 }

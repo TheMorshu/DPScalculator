@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fi.TheMorshu.dpscalculator.Logic;
+package fi.themorshu.dpscalc.logic;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

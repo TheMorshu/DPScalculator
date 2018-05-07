@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fi.TheMorshu.dpscalculator.Logic;
+package fi.themorshu.dpscalc.logic;
 
+import fi.TheMorshu.dpscalc.dao.ItemDao;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
