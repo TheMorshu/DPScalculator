@@ -1,4 +1,4 @@
-# DPS (melee) calculator for OSRS by Sijoittaja/TheMorshu/Ilmari Heiskanen
+# DPS (melee) calculator for OSRS by Sijoittaja/TheMorshu
 
 This project is under work and will be finished once I have enough time. 
 
